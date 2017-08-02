@@ -1,0 +1,62 @@
+body {
+    padding: 40px;
+}
+table {
+    background: #EEE;
+    white-space: nowrap;
+    padding: 10px;
+}
+table th,
+table td {
+    padding: 14px;
+}
+table tr:nth-child(even) {
+    background: #dcdcdc;
+}
+.scrollElement {
+    display: inline-block;
+    position: relative;
+}
+.scrollElement .inner {
+    overflow: auto;
+    position: relative;
+    max-width: 400px;
+    max-height: 300px;
+    border: solid 1px grey;
+}
+.scrollElement .shadow {
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+.scrollElement .shadowRight {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 10px;
+    background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.scrollElement .shadowLeft {
+    left: 0;
+    height: 100%;
+    width: 10px;
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.scrollElement .shadowTop {
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.scrollElement .shadowBottom {
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+}
