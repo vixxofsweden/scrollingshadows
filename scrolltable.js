@@ -8,16 +8,16 @@
 		 */
 		setOnLoadShadowVis: function(scrollElementInner) {
 			var c = scrollElementFn.getConfig(scrollElementInner);
-			var shadows = scrollElementFn.getShadows(c['wrapper']);
+			var shadows = scrollElementFn.getShadows(c.wrapper);
 
 			// Vertical
-			if (c['scrollHeight'] > c['clientHeight']) {
-				shadows['bottom'].show();
+			if (c.scrollHeight > c.clientHeight) {
+				shadows.bottom.show();
 			}
 
 			// Horizontal
-			if (c['scrollWidth'] > c['clientWidth']) {
-				shadows['right'].show();
+			if (c.scrollWidth > c.clientWidth) {
+				shadows.right.show();
 			}
 		},
 		/*
@@ -28,25 +28,25 @@
 		 */
 		setShadowSizePosition: function(scrollElementInner, direction) {
 			var c = scrollElementFn.getConfig(scrollElementInner);
-			var shadows = scrollElementFn.getShadows(c['wrapper']);
+			var shadows = scrollElementFn.getShadows(c.wrapper);
 			var shadowPosition, shadowHeight, shadowWidth;
 
 			switch (direction) {
 				case 'right':
-					shadowPosition = c['verScrollbar'] - c['borderWidth'];
-					shadowHeight = c['leftRightHeight'];
+					shadowPosition = c.verScrollbar - c.borderWidth;
+					shadowHeight = c.leftRightHeight;
 					break;
 				case 'left':
 					shadowPosition = 0;
-					shadowHeight = c['leftRightHeight'];
+					shadowHeight = c.leftRightHeight;
 					break;
 				case 'top':
 					shadowPosition = 0;
-					shadowWidth = c['topBottomWidth'];
+					shadowWidth = c.topBottomWidth;
 					break;
 				case 'bottom':
-					shadowPosition = c['horScrollbar'] - c['borderHeight'];
-					shadowWidth = c['topBottomWidth'];
+					shadowPosition = c.horScrollbar - c.borderHeight;
+					shadowWidth = c.topBottomWidth;
 					break;
 			}
 
@@ -63,38 +63,38 @@
 		 */
 		setOnScrollShadowVis: function(scrollElementInner) {
 			var c = scrollElementFn.getConfig(scrollElementInner);
-			var shadows = scrollElementFn.getShadows(c['wrapper']);
+			var shadows = scrollElementFn.getShadows(c.wrapper);
 
 			// Bottom shadow
-			if (c['scrollHeight'] == c['dynamicHeight']) {
-				shadows['bottom'].fadeOut();
+			if (c.scrollHeight == c.dynamicHeight) {
+				shadows.bottom.fadeOut();
 			}
-			if (c['scrollHeight'] > c['dynamicHeight'] && shadows['bottom'].is(':hidden')) {
-				shadows['bottom'].fadeIn();
+			if (c.scrollHeight > c.dynamicHeight && shadows.bottom.is(':hidden')) {
+				shadows.bottom.fadeIn();
 			}
 
 			// Top shadow
-			if (c['scrollTop'] > 0 && shadows['top'].is(':hidden')) {
-				shadows['top'].fadeIn();
+			if (c.scrollTop > 0 && shadows.top.is(':hidden')) {
+				shadows.top.fadeIn();
 			}
-			if (c['scrollTop'] == 0 && shadows['top'].is(':visible')) {
-				shadows['top'].fadeOut();
+			if (c.scrollTop == 0 && shadows.top.is(':visible')) {
+				shadows.top.fadeOut();
 			}
 
 			// Right shadow
-			if (c['scrollWidth'] == c['dynamicWidth']) {
-				shadows['right'].fadeOut();
+			if (c.scrollWidth == c.dynamicWidth) {
+				shadows.right.fadeOut();
 			}
-			if (c['scrollWidth'] > c['dynamicWidth'] && shadows['right'].is(':hidden')) {
-				shadows['right'].fadeIn();
+			if (c.scrollWidth > c.dynamicWidth && shadows.right.is(':hidden')) {
+				shadows.right.fadeIn();
 			}
 
 			// Left shadow
-			if (c['scrollLeft'] > 0 && shadows['left'].is(':hidden')) {
-				shadows['left'].fadeIn();
+			if (c.scrollLeft > 0 && shadows.left.is(':hidden')) {
+				shadows.left.fadeIn();
 			}
-			if (c['scrollLeft'] == 0 && shadows['left'].is(':visible')) {
-				shadows['left'].fadeOut();
+			if (c.scrollLeft == 0 && shadows.left.is(':visible')) {
+				shadows.left.fadeOut();
 			}
 		},
 		/*
