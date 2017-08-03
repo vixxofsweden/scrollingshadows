@@ -16,6 +16,7 @@ table tr:nth-child(even) {
 .scrollElement {
     display: inline-block;
     position: relative;
+    max-width: 100%;
 }
 .scrollElement .inner {
     overflow: auto;
